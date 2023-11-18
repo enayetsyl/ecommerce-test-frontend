@@ -1,0 +1,99 @@
+/* global */
+:root {
+  --aw_primary_color: #fff;
+  --aw_secondary_color: #000;
+  --aw_theme_color: #f5c000;
+  --aw_primary_font: 'Cinzel', serif;
+  --aw_secondary_font: 'Lora', serif;
+}
+img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+/* local */
+.aw_all-products table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  max-width: 1100px;
+}
+
+.aw_all-products table caption {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin: 0.5em 0 0.75em;
+}
+
+.aw_all-products table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+.aw_all-products table th,
+.aw_all-products table td {
+  padding: 1.1em 0.625em;
+  text-align: center;
+}
+
+.aw_all-products table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 768px) {
+  .aw_all-products table {
+    border: 0;
+  }
+
+  .aw_all-products table caption {
+    font-size: 1.3em;
+  }
+
+  .aw_all-products table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .aw_all-products table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .aw_all-products table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+  }
+
+  .aw_all-products table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .aw_all-products table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.aw_all-products .trash {
+  color: red;
+  cursor: pointer;
+}

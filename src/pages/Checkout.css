@@ -1,0 +1,171 @@
+.aw_checkout h2 {
+  text-align: center;
+  color: var(--aw_theme_color);
+}
+
+.aw_checkout-wrapper {
+  display: grid;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+@media (min-width: 991px) {
+  .aw_checkout-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+    margin: 80px 0;
+  }
+}
+
+.aw_checkout-details,
+.aw_checkout-total,
+.aw_checkout-payment {
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.11);
+  border-radius: 11px;
+  padding: 30px;
+}
+
+.aw_checkout-payment {
+  margin-top: 20px;
+}
+
+@media (min-width: 991px) {
+  .aw_checkout-details {
+    padding: 50px 30px;
+    grid-column: span 3;
+  }
+  .aw_checkout-totals {
+    grid-column: span 2;
+  }
+}
+
+.aw_checkout h4 {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+/*********** table ********************/
+.aw_checkout table {
+  border: 0;
+  border-collapse: collapse;
+  margin: 20px auto;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  max-width: 1100px;
+}
+
+.aw_checkout table tr {
+  border: 0;
+  padding: 0.35em;
+}
+
+.aw_checkout table th,
+.aw_checkout table td {
+  padding: 1.1em 0.625em;
+  text-align: center;
+}
+
+.aw_checkout table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: #fff;
+}
+
+.aw_checkout table tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+@media screen and (max-width: 991px) {
+  .aw_checkout table {
+    border: 0;
+  }
+
+  .aw_checkout table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .aw_checkout table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .aw_checkout table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+  }
+
+  .aw_checkout table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .aw_checkout table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.aw_checkout .trash {
+  color: rgb(154, 2, 2);
+  cursor: pointer;
+}
+
+/* *************** form ************ */
+.aw_checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .aw_checkout-items {
+    flex-direction: row;
+  }
+}
+
+.aw_checkout-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 22px;
+}
+.aw_checkout-item label {
+  font-weight: 600;
+  font-family: var(--aw_secondary_font);
+  margin-bottom: 11px;
+}
+
+.aw_checkout-item input,
+select,
+textarea {
+  border: 0;
+  outline: 0;
+  padding: 22px;
+  box-shadow: 0 0 11px #2687f61c;
+  border-radius: 11px;
+}
+.aw_checkout-item input:focus,
+textarea:focus {
+  box-shadow: 0 0 11px #00000032;
+}
+
+.aw_checkout-item select option {
+  font-size: 14px;
+}
+
+.aw_checkout form p {
+  margin-top: 11px;
+}
+.aw_checkout form p label {
+  margin-left: 11px;
+}
