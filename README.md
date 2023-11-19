@@ -15,3 +15,6 @@ copy the link ->
 go to vs code component and after earlier variable create another variable like follows
 
 const image_hosting-api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
+
+
+

@@ -3,13 +3,14 @@ import {
 } from "react-router-dom";
 import MainLayout from "../MainLayout/MainLayout";
 import Home from "../pages/Home";
-import AddProduct from "../adminPages/AddProduct";
-import AllProducts from "../adminPages/AllProduct";
-import EditProduct from "../adminPages/EditProduct";
 import Checkout from "../pages/Checkout";
 import Cart from "../pages/Cart";
 import Shop from "../pages/Shop";
 import SingleProduct from "../pages/SingleProduct";
+import Dashboard from "../MainLayout/Dashboard";
+import AddProduct from "../adminPages/AddProduct";
+import AllProducts from "../adminPages/AllProduct";
+import EditProduct from "../adminPages/EditProduct";
 
 
 const router = createBrowserRouter([
@@ -21,13 +22,10 @@ const router = createBrowserRouter([
         path: '/',
         element:<Home></Home>
       },
-     {
-        path: '/admin/add-product',
-        element:<AddProduct/>
-      },
-     {
+      {
         path: '/shop',
-        element:<Shop/>
+        element:<Shop/>,
+        loader: () => fetch('http://localhost:5000/productscount')
       },
      {
         path: '/single-product/:id',
@@ -42,17 +40,46 @@ const router = createBrowserRouter([
         path: '/cart',
         element:<Cart/>
       },
-      {
-        path: '/admin/all-products',
-        element:<AllProducts/>
-      },
-      {
-        path: '/admin/edit-product/:id',
-        element:<EditProduct/>,
-        loader: ({params}) => fetch(`http://localhost:5000/v1/allproducts/${params.id}`)
-      },
     ]
   },
+  {
+    path:'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'admin/all-products',
+        element:<AllProducts></AllProducts>
+      },
+      {
+        path:'admin/add-product',
+        element:<AddProduct></AddProduct>
+      },
+      {
+        path:'admin/edit-product/:id',
+        element:<EditProduct></EditProduct>,
+        loader: ({params}) => fetch(`http://localhost:5000/v1/allproducts/${params.id}`)
+      }
+    ]
+  }
+  // {
+  //   path:'dashboard',
+  //   element:<h1>Thsi is dashboard</h1>,
+  //   children:[
+  //     {
+  //       path: '/admin/all-products',
+  //       element:<AllProducts/>
+  //     },
+  //     {
+  //       path: '/admin/edit-product/:id',
+  //       element:<EditProduct/>,
+  //       loader: ({params}) => fetch(`http://localhost:5000/v1/allproducts/${params.id}`)
+  //     },
+  //     {
+  //        path: '/admin/add-product',
+  //        element:<AddProduct/>
+  //      }
+  //   ]
+  // }
 ]);
 
 export default router;

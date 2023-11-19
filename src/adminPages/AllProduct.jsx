@@ -78,7 +78,7 @@ const AllProducts = () => {
               <td data-label="R. Price">${product.regular_price}</td>
               <td data-label="S. Price">${product.sale_price}</td>
               <td data-label="Edit">
-                <Link to={`/admin/edit-product/${product._id}`}>
+                <Link to={`/dashboard/admin/edit-product/${product._id}`}>
                   <FaEdit />
                 </Link>
               </td>
